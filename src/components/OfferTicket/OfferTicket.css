@@ -1,0 +1,49 @@
+.offer-ticket {
+  --notch: 14px;
+  border-radius: 1.75rem;
+  overflow: hidden;
+}
+
+.offer-ticket__divider {
+  position: relative;
+  height: calc(var(--notch) * 2);
+  background: linear-gradient(to bottom, var(--color-cream) 50%, var(--color-oat) 50%);
+  -webkit-mask:
+    radial-gradient(circle var(--notch) at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--notch) at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle var(--notch) at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--notch) at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+}
+
+.offer-ticket__divider::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--notch) + 8px);
+  right: calc(var(--notch) + 8px);
+  top: 50%;
+  border-top: 2px dashed rgba(30, 22, 17, 0.2);
+}
+
+@media (min-width: 768px) {
+  .offer-ticket__divider {
+    width: calc(var(--notch) * 2);
+    height: auto;
+    background: linear-gradient(to right, var(--color-cream) 50%, var(--color-oat) 50%);
+    -webkit-mask:
+      radial-gradient(circle var(--notch) at 50% 0, transparent 98%, #000) top / 100% 51% no-repeat,
+      radial-gradient(circle var(--notch) at 50% 100%, transparent 98%, #000) bottom / 100% 51% no-repeat;
+    mask:
+      radial-gradient(circle var(--notch) at 50% 0, transparent 98%, #000) top / 100% 51% no-repeat,
+      radial-gradient(circle var(--notch) at 50% 100%, transparent 98%, #000) bottom / 100% 51% no-repeat;
+  }
+
+  .offer-ticket__divider::after {
+    left: 50%;
+    right: auto;
+    top: calc(var(--notch) + 8px);
+    bottom: calc(var(--notch) + 8px);
+    border-top: 0;
+    border-left: 2px dashed rgba(30, 22, 17, 0.2);
+  }
+}

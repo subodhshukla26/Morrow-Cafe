@@ -1,0 +1,72 @@
+.claim-success {
+  animation: claim-success-enter 280ms ease-out both;
+}
+
+.claim-copy-button {
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 140ms ease;
+}
+
+.claim-copy-button:hover {
+  transform: translateY(-1px);
+  background-color: rgba(30, 22, 17, 0.05);
+}
+
+.claim-copy-button:active {
+  transform: scale(0.97);
+}
+
+.claim-copy-button[data-copy-state='copied'] {
+  border-color: rgba(180, 84, 31, 0.4);
+  background-color: rgba(180, 84, 31, 0.08);
+  color: #963f14;
+}
+
+@keyframes claim-success-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claim-success,
+  .claim-copy-button {
+    animation: none;
+    transition: none;
+  }
+
+  .claim-copy-button:hover,
+  .claim-copy-button:active {
+    transform: none;
+  }
+}
+.claim-state-enter {
+  animation: claim-form-enter 220ms ease-out both;
+}
+
+@keyframes claim-form-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claim-state-enter {
+    animation: none;
+  }
+}

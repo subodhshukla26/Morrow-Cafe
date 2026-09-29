@@ -1,0 +1,11 @@
+.campaign-hero__content {
+  padding-top: max(env(safe-area-inset-top), 1.25rem);
+  padding-bottom: max(env(safe-area-inset-bottom), 1.75rem);
+}
+
+@media (min-width: 1024px) {
+  .campaign-hero__content {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}

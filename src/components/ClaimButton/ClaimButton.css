@@ -1,0 +1,72 @@
+.claim-button {
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 180ms ease,
+    transform 140ms ease,
+    box-shadow 180ms ease;
+}
+
+.claim-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 244, 230, 0.28) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 600ms ease;
+}
+
+.claim-button__icon {
+  transition: transform 180ms ease;
+}
+
+@media (hover: hover) {
+  .claim-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 14px 34px -12px rgba(180, 84, 31, 0.8);
+  }
+
+  .claim-button:hover::before {
+    transform: translateX(120%);
+  }
+
+  .claim-button:hover .claim-button__icon {
+    transform: translateX(4px);
+  }
+}
+
+.claim-button:focus-visible .claim-button__icon {
+  transform: translateX(4px);
+}
+
+.claim-button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.claim-button:disabled {
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claim-button,
+  .claim-button::before,
+  .claim-button__icon {
+    transition: none;
+  }
+
+  .claim-button::before {
+    display: none;
+  }
+
+  .claim-button:hover,
+  .claim-button:active {
+    transform: none;
+  }
+}
